@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Te quiero mucho</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(46, 56, 68);
+        }
+
+        .heart {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            background-color: rgb(231, 41, 82);
+            transform: rotate(-45deg);
+            box-shadow: -18px 18px 98px rgb(231, 41, 82);
+            animation: animate .6s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(-45deg) scale(1.07);
+            }
+
+            80% {
+                transform: rotate(-45deg) scale(1.0);
+            }
+
+            100% {
+                transform: rotate(-45deg) scale(0.8);
+            }
+        }
+
+        .heart::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            width: 70px;
+            height: 70px;
+            background: rgb(231, 41, 82);
+            border-radius: 50%;
+            box-shadow: -18px 18px 98px rgb(231, 41, 82);
+        }
+
+        .heart::after {
+            content: '';
+            position: absolute;
+            right: -50%;
+            width: 70px;
+            height: 70px;
+            background: rgb(231, 41, 82);
+            border-radius: 50%;
+            box-shadow: -18px 18px 98px rgb(231, 41, 82);
+        }
+
+        .text {
+            color: aliceblue;
+            margin-top: 20px;
+            padding: 0 14px 0 14px;
+        }
+
+        .btn-si {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="heart mt-2"></div>
+
+    <h4 class="text">Toca el boton Vida Mia</h4>
+    <button class="btn btn-danger mt-2">VIIDAA MIAAAAAA</button>
+    <button class="btn btn-danger mt-2 btn-si">SIIIIIII</button>
+
+
+    <script>
+        let h1 = document.querySelector('.text');
+        let btn = document.querySelector('.btn');
+        let contenedor = document.querySelector('.contenedor');
+        let btnSi = document.querySelector('.btn-si')
+
+        btn.addEventListener('click', () => {
+            btn.style.display = 'none';
+            btnSi.style.display = 'block';
+
+            h1.innerHTML = 'Bueno Primero Que todo, quiero decirte lo que siempre te eh dicho, y es que me gustas mucho y estoy enamorado de ti, luego pedirte que disculpas por ser un poco canson jeje y por todo lo demas, queria decirte que en lo poco que llevo contigo eh sido bastante feliz, y quisiera que estuvieras el resto de mis dias, confieso que cuando te veo, que por cierto me muero por verte, el 25 va a ser un dia inolvidable para mi,  quisiera estar siempre asi contigo, abrazados, bueno, cuando te veo, o me escribes, mi corazon se pone a latir como este que te hice, si estas dispuesta quisiera expresarte todos mis miedos y que tu me expreses los tuyos, la verda, me enamore 🫶 y TE QUIERO MUCHO ANDREA <br> Por ultimo <br> ¿Quieres ser mi Novia?';
+        })
+
+
+
+        btnSi.addEventListener('click', () => {
+            btnSi.style.display = 'none';
+            h1.innerHTML = 'JKAJAKAJKA MI AMOR <br> yo no acepto un no, yo quiero ser tu bebe y tu pechichon'
+        })
+    </script>
+</body>
+
+</html>
